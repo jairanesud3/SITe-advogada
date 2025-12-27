@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, Share2 } from 'lucide-react';
+import { Menu, X, Phone, Share2, Scale } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [logoError, setLogoError] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,12 +53,33 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-24">
           
-          {/* Logo */}
-          <div className="flex-shrink-0 cursor-pointer group" onClick={() => scrollToSection('home')}>
-            <h1 className="text-xl md:text-2xl font-serif font-bold tracking-wider text-white flex flex-col md:block">
-              <span className="group-hover:text-gold transition-colors duration-300">JAIRANE SOUSA</span> 
-              <span className="hidden md:inline text-gold mx-2">|</span> 
-              <span className="text-gray-400 text-xs md:text-sm font-sans font-light tracking-[0.3em] uppercase md:ml-0 mt-1 md:mt-0 group-hover:text-gray-200 transition-colors">Criminalista</span>
+          {/* Brand Area (Logo + Name) */}
+          <div className="flex-shrink-0 cursor-pointer group flex items-center gap-3 md:gap-4" onClick={() => scrollToSection('home')}>
+            
+            {/* LOGO SLOT - Coloque sua logo em public/images/logo.png */}
+            <div className={`relative w-10 h-10 md:w-14 md:h-14 flex items-center justify-center rounded-full border border-gold/20 overflow-hidden transition-all duration-500 group-hover:border-gold/60 ${logoError ? 'bg-gray-800' : 'bg-transparent'}`}>
+                <img 
+                    src="/images/logo.png" 
+                    alt="Logo" 
+                    className={`w-full h-full object-contain p-1 md:p-1.5 transition-transform duration-500 group-hover:scale-110 ${logoError ? 'hidden' : 'block'}`}
+                    onError={() => setLogoError(true)}
+                />
+                
+                {/* Fallback Icon (O "Buraco Cinza" com ícone se não tiver imagem) */}
+                {logoError && (
+                    <Scale className="text-gray-500 w-5 h-5 md:w-7 md:h-7 animate-pulse" />
+                )}
+                
+                {/* Brilho ao passar o mouse */}
+                <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+            </div>
+
+            {/* Name Text */}
+            <h1 className="text-xl md:text-2xl font-serif font-bold tracking-wider text-white flex flex-col justify-center">
+              <span className="group-hover:text-gold transition-colors duration-300 leading-none">JAIRANE SOUSA</span> 
+              <span className="text-gray-400 text-[10px] md:text-xs font-sans font-light tracking-[0.3em] uppercase mt-1 group-hover:text-gray-200 transition-colors">
+                Advocacia Criminal
+              </span>
             </h1>
           </div>
 
