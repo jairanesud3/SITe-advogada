@@ -3,15 +3,17 @@ import React from 'react';
 const FloatingWhatsApp: React.FC = () => {
   return (
     <a
-      href="https://wa.me/5588994737814?text=Olá,%20Dra.%20Jairane.%20Preciso%20de%20atendimento%20criminal%20urgente."
+      href="https://api.whatsapp.com/send?phone=5588994737814&text=Ol%C3%A1%2C%20Dra.%20Jairane.%20Preciso%20de%20atendimento%20criminal%20urgente."
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 group"
       aria-label="Falar no WhatsApp"
+      data-aos="zoom-in"
+      data-aos-delay="1000"
     >
-      <div className="relative transition-transform duration-300 hover:scale-105">
-        {/* Removed animate-ping span for a cleaner look */}
-        <div className="relative bg-[#25D366] p-3.5 rounded-full shadow-2xl hover:shadow-[#25D366]/40 flex items-center justify-center transition-shadow duration-300 border border-white/10">
+      <div className="relative transition-transform duration-300 hover:scale-110">
+        <span className="absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75 animate-ping"></span>
+        <div className="relative bg-[#25D366] p-3.5 rounded-full shadow-2xl hover:shadow-[#25D366]/60 flex items-center justify-center transition-shadow duration-300 border border-white/20">
            <svg 
             xmlns="http://www.w3.org/2000/svg" 
             width="32" 

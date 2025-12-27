@@ -44,16 +44,20 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled || isOpen ? 'bg-[#050c18]/95 backdrop-blur-md shadow-lg border-b border-gold/10' : 'bg-transparent'}`}>
+    <nav 
+        className={`fixed w-full z-50 transition-all duration-500 ${scrolled || isOpen ? 'bg-[#050c18]/95 backdrop-blur-md shadow-lg border-b border-gold/10' : 'bg-transparent'}`}
+        data-aos="fade-down" 
+        data-aos-duration="1000"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-24">
           
           {/* Logo */}
           <div className="flex-shrink-0 cursor-pointer group" onClick={() => scrollToSection('home')}>
             <h1 className="text-xl md:text-2xl font-serif font-bold tracking-wider text-white flex flex-col md:block">
-              <span className="group-hover:text-gold transition-colors">JAIRANE SOUSA</span> 
+              <span className="group-hover:text-gold transition-colors duration-300">JAIRANE SOUSA</span> 
               <span className="hidden md:inline text-gold mx-2">|</span> 
-              <span className="text-gray-400 text-xs md:text-sm font-sans font-light tracking-[0.3em] uppercase md:ml-0 mt-1 md:mt-0">Criminalista</span>
+              <span className="text-gray-400 text-xs md:text-sm font-sans font-light tracking-[0.3em] uppercase md:ml-0 mt-1 md:mt-0 group-hover:text-gray-200 transition-colors">Criminalista</span>
             </h1>
           </div>
 
@@ -69,10 +73,10 @@ const Navbar: React.FC = () => {
               </button>
             ))}
             <a 
-              href="https://wa.me/5588994737814?text=Olá,%20Dra.%20Jairane.%20Preciso%20de%20atendimento%20criminal%20urgente."
+              href="https://api.whatsapp.com/send?phone=5588994737814&text=Ol%C3%A1%2C%20Dra.%20Jairane.%20Preciso%20de%20atendimento%20criminal%20urgente."
               target="_blank"
-              rel="noreferrer"
-              className="bg-transparent border border-gold text-gold hover:bg-gold hover:text-navy font-bold py-2 px-6 rounded-sm transition-all duration-300 transform hover:scale-105 flex items-center gap-2 text-xs tracking-widest uppercase"
+              rel="noopener noreferrer"
+              className="bg-transparent border border-gold text-gold hover:bg-gold hover:text-navy font-bold py-2 px-6 rounded-sm transition-all duration-300 transform hover:scale-105 flex items-center gap-2 text-xs tracking-widest uppercase hover:shadow-[0_0_15px_rgba(212,175,55,0.4)]"
             >
               <Phone size={16} />
               Plantão 24h
@@ -81,7 +85,7 @@ const Navbar: React.FC = () => {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-4">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-gold focus:outline-none p-2">
+            <button onClick={() => setIsOpen(!isOpen)} className="text-gold focus:outline-none p-2 transition-transform active:scale-95">
               {isOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
@@ -103,7 +107,9 @@ const Navbar: React.FC = () => {
           
           <div className="w-full flex flex-col gap-3 mt-4">
               <a
-                href="https://wa.me/5588994737814?text=Olá,%20Dra.%20Jairane.%20Preciso%20de%20atendimento%20criminal%20urgente."
+                href="https://api.whatsapp.com/send?phone=5588994737814&text=Ol%C3%A1%2C%20Dra.%20Jairane.%20Preciso%20de%20atendimento%20criminal%20urgente."
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 bg-gold text-navy font-bold py-3 px-8 rounded-sm w-full text-center text-sm uppercase tracking-wider"
               >
                 <Phone size={18} />

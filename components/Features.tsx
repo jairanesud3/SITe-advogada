@@ -7,8 +7,8 @@ const Features: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
           
-          <div className="flex flex-col items-center" data-aos="fade-up" data-aos-delay="0">
-            <div className="mb-6 opacity-80">
+          <div className="flex flex-col items-center group" data-aos="fade-up" data-aos-delay="0">
+            <div className="mb-6 opacity-80 transition-transform duration-500 group-hover:scale-125 group-hover:text-gold">
                 <Shield className="w-10 h-10 text-gold" />
             </div>
             <h3 className="text-lg font-serif font-bold text-white mb-3 tracking-wide">Sigilo Absoluto</h3>
@@ -17,8 +17,8 @@ const Features: React.FC = () => {
             </p>
           </div>
 
-          <div className="flex flex-col items-center" data-aos="fade-up" data-aos-delay="200">
-            <div className="mb-6 opacity-80">
+          <div className="flex flex-col items-center group" data-aos="fade-up" data-aos-delay="200">
+            <div className="mb-6 opacity-80 transition-transform duration-500 group-hover:scale-125 group-hover:text-gold">
                 <Clock className="w-10 h-10 text-gold" />
             </div>
             <h3 className="text-lg font-serif font-bold text-white mb-3 tracking-wide">Atendimento 24h</h3>
@@ -27,8 +27,8 @@ const Features: React.FC = () => {
             </p>
           </div>
 
-          <div className="flex flex-col items-center" data-aos="fade-up" data-aos-delay="400">
-            <div className="mb-6 opacity-80">
+          <div className="flex flex-col items-center group" data-aos="fade-up" data-aos-delay="400">
+            <div className="mb-6 opacity-80 transition-transform duration-500 group-hover:scale-125 group-hover:text-gold">
                 <BrainCircuit className="w-10 h-10 text-gold" />
             </div>
             <h3 className="text-lg font-serif font-bold text-white mb-3 tracking-wide">Estratégia Técnica</h3>

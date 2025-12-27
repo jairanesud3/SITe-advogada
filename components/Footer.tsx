@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           
           {/* Brand */}
-          <div className="text-center md:text-left space-y-6">
+          <div className="text-center md:text-left space-y-6" data-aos="fade-right">
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-white tracking-wide">
               JAIRANE SOUSA
             </h2>
@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
                 rel="noreferrer"
                 className="group flex items-center gap-2 text-gold hover:text-white transition-colors duration-300"
                 >
-                <div className="p-2 border border-gold/30 rounded-full group-hover:bg-gold group-hover:text-navy transition-all">
+                <div className="p-2 border border-gold/30 rounded-full group-hover:bg-gold group-hover:text-navy transition-all duration-300 transform group-hover:rotate-12">
                     <Instagram size={18} />
                 </div>
                 <span className="font-medium text-sm">@jairanesousamendes</span>
@@ -52,10 +52,10 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="text-center md:text-left">
+          <div className="text-center md:text-left" data-aos="fade-up" data-aos-delay="200">
              <h3 className="text-white font-bold uppercase tracking-[0.2em] mb-8 text-xs border-b border-gold/20 pb-2 inline-block md:block">Canais de Atendimento</h3>
              <ul className="space-y-6">
-                <li className="flex flex-col md:flex-row items-center md:items-start gap-4 text-gray-300 group">
+                <li className="flex flex-col md:flex-row items-center md:items-start gap-4 text-gray-300 group hover:translate-x-1 transition-transform">
                     <div className="p-2 bg-navy border border-white/10 rounded-full text-gold group-hover:border-gold/50 transition-colors">
                         <MapPin className="w-5 h-5" />
                     </div>
@@ -64,7 +64,7 @@ const Footer: React.FC = () => {
                         <span className="text-sm font-light text-gray-400">Atendimento em todo o estado de SC</span>
                     </div>
                 </li>
-                <li className="flex flex-col md:flex-row items-center md:items-start gap-4 text-gray-300 group">
+                <li className="flex flex-col md:flex-row items-center md:items-start gap-4 text-gray-300 group hover:translate-x-1 transition-transform">
                     <div className="p-2 bg-navy border border-white/10 rounded-full text-gold group-hover:border-gold/50 transition-colors">
                          <Phone className="w-5 h-5" />
                     </div>
@@ -77,11 +77,13 @@ const Footer: React.FC = () => {
           </div>
 
           {/* CTAs & Share */}
-          <div className="text-center md:text-right flex flex-col items-center md:items-end justify-center gap-6">
+          <div className="text-center md:text-right flex flex-col items-center md:items-end justify-center gap-6" data-aos="fade-left" data-aos-delay="400">
             <div>
                 <p className="text-gold text-sm mb-2 font-medium tracking-wide">Precisa de ajuda imediata?</p>
                 <a 
-                href="https://wa.me/5588994737814?text=Olá,%20Dra.%20Jairane.%20Preciso%20de%20atendimento%20criminal%20urgente."
+                href="https://api.whatsapp.com/send?phone=5588994737814&text=Ol%C3%A1%2C%20Dra.%20Jairane.%20Preciso%20de%20atendimento%20criminal%20urgente."
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block bg-gold hover:bg-white text-navy font-bold py-3 px-8 rounded-sm transition-all duration-300 shadow-lg hover:shadow-gold/20 text-sm tracking-wider uppercase transform hover:-translate-y-1"
                 >
                     Chamar no WhatsApp
