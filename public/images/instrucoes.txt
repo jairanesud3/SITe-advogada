@@ -1,0 +1,22 @@
+PASTA DE IMAGENS DO SITE
+=========================================
+
+Coloque suas imagens AQUI nesta pasta (public/images).
+O site vai reconhecê-las automaticamente se você usar os nomes abaixo:
+
+1. logo.png
+   - A logo do escritório.
+   - Ideal: Fundo transparente (PNG).
+   - Onde aparece: No topo (Navbar) ao lado do nome.
+
+2. profile.jpg
+   - A foto da Dra. Jairane.
+   - Ideal: Foto vertical ou quadrada de alta qualidade.
+   - Onde aparece: Na seção "Sobre".
+
+3. hero-bg.jpg
+   - A imagem de fundo principal.
+   - Ideal: Foto escura de tribunal, martelo ou balança.
+   - Onde aparece: Na primeira tela (Fundo grande).
+
+OBS: Se você não colocar as imagens, o site mostrará versões provisórias ou ícones (o "buraco cinza" que você pediu).
