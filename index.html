@@ -44,8 +44,8 @@
               'hero-gradient': 'linear-gradient(to bottom, rgba(10, 25, 47, 0.9), rgba(17, 17, 17, 1))',
             },
             animation: {
-              blob: "blob 10s infinite",
-              'pulse-slow': "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+              blob: "blob 20s infinite",
+              'pulse-slow': "pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite",
             },
             keyframes: {
               blob: {
@@ -68,6 +68,11 @@
       }
     </script>
     <style>
+      /* Garantir fundo escuro antes do carregamento total */
+      body {
+        background-color: #111111;
+      }
+
       /* Custom Scrollbar */
       ::-webkit-scrollbar {
         width: 8px;

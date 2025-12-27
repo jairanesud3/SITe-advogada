@@ -25,18 +25,20 @@ const App: React.FC = () => {
         easing: 'ease-out-quart',
         mirror: false,
         anchorPlacement: 'top-bottom',
+        offset: 50, // Começa a animar um pouco antes
       });
     }
   }, []);
 
   return (
-    <div className="relative min-h-screen flex flex-col bg-matte text-gray-100">
-      {/* Fundo Animado Global */}
+    <div className="relative min-h-screen flex flex-col text-gray-100 overflow-hidden">
+      {/* Fundo Animado Global - Z-Index 0 */}
       <BackgroundOrbs />
       
-      <div className="relative z-10 flex flex-col flex-grow">
+      {/* Conteúdo Principal - Z-Index 10 (acima do fundo) */}
+      <div className="relative z-10 flex flex-col flex-grow w-full">
         <Navbar />
-        <main className="flex-grow">
+        <main className="flex-grow w-full">
           <Hero />
           <About />
           <Services />

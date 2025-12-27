@@ -7,7 +7,7 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -44,7 +44,7 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-navy/90 backdrop-blur-xl shadow-lg border-b border-gold/10' : 'bg-transparent'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled || isOpen ? 'bg-[#050c18]/95 backdrop-blur-md shadow-lg border-b border-gold/10' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-24">
           
@@ -89,8 +89,8 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Mobile Menu Dropdown */}
-      <div className={`md:hidden absolute w-full bg-navy-dark/95 backdrop-blur-xl border-b border-gold/20 transition-all duration-500 overflow-hidden ${isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
-        <div className="px-4 pt-4 pb-8 space-y-4 flex flex-col items-center">
+      <div className={`md:hidden absolute top-24 left-0 w-full bg-[#050c18] border-b border-gold/20 transition-all duration-500 ease-in-out overflow-hidden ${isOpen ? 'max-h-[500px] opacity-100 shadow-2xl' : 'max-h-0 opacity-0'}`}>
+        <div className="px-4 py-6 space-y-4 flex flex-col items-center">
           {navLinks.map((link) => (
             <button
               key={link.name}
