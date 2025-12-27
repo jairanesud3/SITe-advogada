@@ -26,7 +26,7 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <section id="atuacao" className="py-24 bg-navy relative">
+    <section id="atuacao" className="py-24 relative bg-navy/40 backdrop-blur-sm border-y border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16" data-aos="fade-up">
           <h4 className="text-gold font-sans font-bold tracking-widest uppercase mb-3 text-xs">O Direito Penal não admite erros</h4>
@@ -42,9 +42,9 @@ const Services: React.FC = () => {
           {services.map((service, index) => (
             <div 
                 key={index} 
-                className="bg-[#0b1b33] border border-white/5 p-8 hover:border-gold/30 transition-all duration-500 group hover:-translate-y-1 rounded-sm flex flex-col"
+                className="bg-[#0b1b33]/60 backdrop-blur-md border border-white/5 p-8 hover:border-gold/30 transition-all duration-500 group hover:-translate-y-1 rounded-sm flex flex-col"
                 data-aos="fade-up"
-                data-aos-delay={index * 150} // Delay escalonado para efeito cascata
+                data-aos-delay={index * 150}
             >
               <div className="mb-6 p-3 bg-matte inline-block rounded-sm border border-gold/10 group-hover:border-gold/40 transition-colors duration-500 w-fit">
                 {service.icon}

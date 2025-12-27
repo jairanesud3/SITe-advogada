@@ -3,20 +3,16 @@ import { CheckCircle2 } from 'lucide-react';
 
 const About: React.FC = () => {
   return (
-    <section id="sobre" className="py-24 bg-matte relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="sobre" className="py-24 relative overflow-hidden backdrop-blur-sm bg-matte/30">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           {/* Image Column */}
           <div className="relative group" data-aos="fade-right" data-aos-duration="1500">
-            {/* Efeito de moldura deslocada - Sutil e elegante */}
+            {/* Efeito de moldura deslocada */}
             <div className="absolute -inset-4 bg-gold/10 rounded-sm transform translate-x-3 translate-y-3 transition-transform duration-700 ease-out border border-gold/5"></div>
             
-            <div className="relative border border-gold/20 p-2 bg-navy/50 backdrop-blur-sm">
-                {/* 
-                   ATENÇÃO: Para usar a foto real enviada, salve o arquivo na pasta do projeto como 'foto-dra.jpg' 
-                   e mude o src abaixo para: src="./foto-dra.jpg"
-                */}
+            <div className="relative border border-gold/20 p-2 bg-navy/50 backdrop-blur-md">
                 <img 
                     src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" 
                     alt="Dra. Jairane Santos De Sousa" 
