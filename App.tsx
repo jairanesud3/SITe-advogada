@@ -17,25 +17,30 @@ declare global {
 
 const App: React.FC = () => {
   useEffect(() => {
-    // Initialize AOS with "Luxury" settings
-    if (window.AOS) {
-      window.AOS.init({
-        duration: 1000, 
-        once: true,
-        easing: 'ease-out-quart',
-        mirror: false,
-        anchorPlacement: 'top-bottom',
-        offset: 50, // Começa a animar um pouco antes
-      });
-    }
+    // Initialize AOS safely
+    const initAOS = () => {
+      if (window.AOS) {
+        window.AOS.init({
+          duration: 1000, 
+          once: true,
+          easing: 'ease-out-quart',
+          mirror: false,
+          anchorPlacement: 'top-bottom',
+          offset: 50,
+        });
+      }
+    };
+
+    // Pequeno delay para garantir que o DOM renderizou
+    setTimeout(initAOS, 100);
   }, []);
 
   return (
-    <div className="relative min-h-screen flex flex-col text-gray-100 overflow-hidden">
-      {/* Fundo Animado Global - Z-Index 0 */}
+    <div className="relative min-h-screen flex flex-col text-gray-100">
+      {/* Fundo Animado Global - Z-Index -1 (Atrás de tudo) */}
       <BackgroundOrbs />
       
-      {/* Conteúdo Principal - Z-Index 10 (acima do fundo) */}
+      {/* Conteúdo Principal - Z-Index 10 (Frente) */}
       <div className="relative z-10 flex flex-col flex-grow w-full">
         <Navbar />
         <main className="flex-grow w-full">
