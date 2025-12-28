@@ -13,13 +13,12 @@ const About: React.FC = () => {
             <div className="absolute -inset-4 bg-gold/10 rounded-sm transform translate-x-3 translate-y-3 transition-transform duration-700 ease-out border border-gold/5 group-hover:translate-x-2 group-hover:translate-y-2"></div>
             
             <div className="relative border border-gold/20 p-2 bg-navy/50 backdrop-blur-md overflow-hidden">
-                {/* ATENÇÃO: Coloque sua imagem em public/images/profile.jpg */}
-                {/* Adicionamos ?v=2 para atualizar a foto caso você tenha mudado */}
+                {/* SRC RESTAURADO: Apontando para o arquivo original */}
                 <img 
-                    src="/images/profile.jpg?v=2"
+                    src="/images/profile.jpg"
                     onError={(e) => {
-                      // Fallback apenas se a imagem não existir
-                      e.currentTarget.src = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800";
+                       // Mantendo a imagem original sem fallback agressivo
+                       console.log("Erro ao carregar imagem de perfil");
                     }}
                     alt="Dra. Jairane Santos De Sousa" 
                     className="w-full h-auto object-cover shadow-2xl transition-transform duration-1000 transform group-hover:scale-105"

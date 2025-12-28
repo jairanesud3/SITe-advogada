@@ -56,25 +56,28 @@ const Navbar: React.FC = () => {
           {/* Brand Area (Logo + Name) */}
           <div className="flex-shrink-0 cursor-pointer group flex items-center gap-3 md:gap-4" onClick={() => scrollToSection('home')}>
             
-            {/* LOGO SLOT */}
-            {/* CORREÇÃO: Removido rounded-full e border para não cortar a logo ou criar caixas estranhas */}
-            {/* Aumentado o tamanho para w-12/h-12 (mobile) e w-20/h-20 (desktop) */}
-            <div className={`relative w-12 h-12 md:w-20 md:h-20 flex items-center justify-center transition-all duration-500 ${logoError ? 'bg-gray-800 rounded-full border border-gold/20' : ''}`}>
+            {/* LOGO SLOT - Circular Estilo Medalhão */}
+            {/* CORREÇÃO: rounded-full + padding (p-2) garante que a logo quadrada fique dentro do circulo sem cortar */}
+            <div className={`relative w-14 h-14 md:w-20 md:h-20 flex items-center justify-center rounded-full border border-gold/40 bg-[#050c18] shadow-lg overflow-hidden transition-all duration-500 group-hover:border-gold group-hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] ${logoError ? 'bg-gray-800' : ''}`}>
+                {/* SRC RESTAURADO: Apontando para o arquivo original */}
                 <img 
-                    src="/images/logo.png?v=3" 
-                    alt="Logo" 
-                    className={`w-full h-full object-contain transition-transform duration-500 group-hover:scale-105 ${logoError ? 'hidden' : 'block'}`}
+                    src="/images/logo.png" 
+                    alt="Logo Jairane Sousa" 
+                    className={`w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-110 ${logoError ? 'hidden' : 'block'}`}
                     onError={() => setLogoError(true)}
                 />
                 
-                {/* Fallback Icon (O "Buraco Cinza" só aparece se a imagem der erro) */}
+                {/* Fallback Icon */}
                 {logoError && (
                     <Scale className="text-gray-500 w-6 h-6 md:w-8 md:h-8 animate-pulse" />
                 )}
+
+                {/* Brilho Glossy */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent rounded-full pointer-events-none"></div>
             </div>
 
             {/* Name Text */}
-            <h1 className="text-xl md:text-2xl font-serif font-bold tracking-wider text-white flex flex-col justify-center">
+            <h1 className="text-xl md:text-2xl font-serif font-bold tracking-wider text-white flex flex-col justify-center drop-shadow-md">
               <span className="group-hover:text-gold transition-colors duration-300 leading-none">JAIRANE SOUSA</span> 
               <span className="text-gray-400 text-[10px] md:text-xs font-sans font-light tracking-[0.3em] uppercase mt-1 group-hover:text-gray-200 transition-colors">
                 Advocacia Criminal
@@ -88,7 +91,7 @@ const Navbar: React.FC = () => {
               <button
                 key={link.name}
                 onClick={() => scrollToSection(link.id)}
-                className="relative text-gray-300 hover:text-white transition-colors duration-300 text-xs uppercase tracking-widest font-medium py-2 after:content-[''] after:absolute after:w-0 after:h-[1px] after:bg-gold after:bottom-0 after:left-0 after:transition-all after:duration-300 hover:after:w-full"
+                className="relative text-gray-300 hover:text-white transition-colors duration-300 text-xs uppercase tracking-widest font-medium py-2 after:content-[''] after:absolute after:w-0 after:h-[1px] after:bg-gold after:bottom-0 after:left-0 after:transition-all after:duration-300 hover:after:w-full shadow-black drop-shadow-sm"
               >
                 {link.name}
               </button>
@@ -104,10 +107,15 @@ const Navbar: React.FC = () => {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center gap-4">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-gold focus:outline-none p-2 transition-transform active:scale-95">
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
+          {/* Mobile Menu Button - CORREÇÃO DE VISIBILIDADE */}
+          {/* Adicionado z-index alto e flex-shrink-0 para garantir que não seja esmagado pela logo */}
+          <div className="md:hidden flex items-center z-50 flex-shrink-0 ml-2">
+            <button 
+                onClick={() => setIsOpen(!isOpen)} 
+                className="text-gold p-2 transition-transform active:scale-95 focus:outline-none bg-navy/20 rounded-md backdrop-blur-sm border border-gold/10"
+                aria-label="Menu"
+            >
+              {isOpen ? <X size={32} /> : <Menu size={32} />}
             </button>
           </div>
         </div>

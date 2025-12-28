@@ -6,18 +6,21 @@ const Hero: React.FC = () => {
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image Layer */}
       <div id="hero-bg" className="absolute inset-0 z-0">
-        {/* ATENÇÃO: Coloque sua imagem em public/images/hero-bg.jpg */}
+        {/* SRC RESTAURADO: Apontando para o arquivo original */}
         <img 
-            src="/images/hero-bg.jpg?v=2" 
+            src="/images/hero-bg.jpg" 
             onError={(e) => {
-              // Fallback caso a imagem local não exista ainda
-              e.currentTarget.src = "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=2000";
+              // Fallback sutil apenas se a imagem não carregar
+              e.currentTarget.style.display = 'none';
             }}
             alt="Justiça e Direito Criminal" 
             className="w-full h-full object-cover animate-pulse-slow scale-105" 
             style={{ animationDuration: '30s' }}
         />
         
+        {/* Fallback de fundo caso a imagem falhe (para não ficar branco) */}
+        <div className="absolute inset-0 bg-navy z-[-1]"></div>
+
         {/* Overlay Escuro com Transparência */}
         <div className="absolute inset-0 bg-navy/80 backdrop-blur-[2px] mix-blend-multiply z-10"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-navy/90 via-navy/50 to-matte z-20"></div>
