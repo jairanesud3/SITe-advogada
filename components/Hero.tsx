@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
       <div id="hero-bg" className="absolute inset-0 z-0">
         {/* ATENÇÃO: Coloque sua imagem em public/images/hero-bg.jpg */}
         <img 
-            src="/images/hero-bg.jpg" 
+            src="/images/hero-bg.jpg?v=2" 
             onError={(e) => {
               // Fallback caso a imagem local não exista ainda
               e.currentTarget.src = "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=2000";

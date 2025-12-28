@@ -14,9 +14,11 @@ const About: React.FC = () => {
             
             <div className="relative border border-gold/20 p-2 bg-navy/50 backdrop-blur-md overflow-hidden">
                 {/* ATENÇÃO: Coloque sua imagem em public/images/profile.jpg */}
+                {/* Adicionamos ?v=2 para atualizar a foto caso você tenha mudado */}
                 <img 
-                    src="/images/profile.jpg"
+                    src="/images/profile.jpg?v=2"
                     onError={(e) => {
+                      // Fallback apenas se a imagem não existir
                       e.currentTarget.src = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800";
                     }}
                     alt="Dra. Jairane Santos De Sousa" 

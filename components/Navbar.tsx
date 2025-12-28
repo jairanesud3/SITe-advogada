@@ -56,22 +56,21 @@ const Navbar: React.FC = () => {
           {/* Brand Area (Logo + Name) */}
           <div className="flex-shrink-0 cursor-pointer group flex items-center gap-3 md:gap-4" onClick={() => scrollToSection('home')}>
             
-            {/* LOGO SLOT - Coloque sua logo em public/images/logo.png */}
-            <div className={`relative w-10 h-10 md:w-14 md:h-14 flex items-center justify-center rounded-full border border-gold/20 overflow-hidden transition-all duration-500 group-hover:border-gold/60 ${logoError ? 'bg-gray-800' : 'bg-transparent'}`}>
+            {/* LOGO SLOT */}
+            {/* CORREÇÃO: Removido rounded-full e border para não cortar a logo ou criar caixas estranhas */}
+            {/* Aumentado o tamanho para w-12/h-12 (mobile) e w-20/h-20 (desktop) */}
+            <div className={`relative w-12 h-12 md:w-20 md:h-20 flex items-center justify-center transition-all duration-500 ${logoError ? 'bg-gray-800 rounded-full border border-gold/20' : ''}`}>
                 <img 
-                    src="/images/logo.png" 
+                    src="/images/logo.png?v=3" 
                     alt="Logo" 
-                    className={`w-full h-full object-contain p-1 md:p-1.5 transition-transform duration-500 group-hover:scale-110 ${logoError ? 'hidden' : 'block'}`}
+                    className={`w-full h-full object-contain transition-transform duration-500 group-hover:scale-105 ${logoError ? 'hidden' : 'block'}`}
                     onError={() => setLogoError(true)}
                 />
                 
-                {/* Fallback Icon (O "Buraco Cinza" com ícone se não tiver imagem) */}
+                {/* Fallback Icon (O "Buraco Cinza" só aparece se a imagem der erro) */}
                 {logoError && (
-                    <Scale className="text-gray-500 w-5 h-5 md:w-7 md:h-7 animate-pulse" />
+                    <Scale className="text-gray-500 w-6 h-6 md:w-8 md:h-8 animate-pulse" />
                 )}
-                
-                {/* Brilho ao passar o mouse */}
-                <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
             </div>
 
             {/* Name Text */}
